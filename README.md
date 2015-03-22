@@ -3,6 +3,8 @@ Smarty Extension for Yii 2
 
 This extension provides a `ViewRender` that would allow you to use [Smarty](http://www.smarty.net/) view template engine.
 
+For license information check the [LICENSE](LICENSE.md)-file.
+
 Installation
 ------------
 
