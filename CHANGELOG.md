@@ -5,6 +5,7 @@ Yii Framework 2 smarty extension Change Log
 -----------------------
 
 
+
 2.0.3 March 01, 2015
 --------------------
 
