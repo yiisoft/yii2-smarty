@@ -1,8 +1,11 @@
 Yii Framework 2 smarty extension Change Log
 ===========================================
 
-2.0.4 under development
+2.0.5 under development
 -----------------------
+
+2.0.4 May 26, 2015
+------------------
 
 - Bug #8: Fixed `functionRegisterJsFile` position parameter (TomassunGitHub, samdark)
 
