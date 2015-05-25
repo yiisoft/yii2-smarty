@@ -320,9 +320,9 @@ PHP;
 
         $url = ArrayHelper::remove($params, 'url');
         $key = ArrayHelper::remove($params, 'key', null);
-        $position = ArrayHelper::remove($params, 'position');
-        if (isset($params['position']))
-            $params['position'] = $this->getViewConstVal($position, View::POS_END);
+        if (isset($params['position'])) {
+            $params['position'] = $this->getViewConstVal($params['position'], View::POS_END);
+        }
 
         Yii::$app->getView()->registerJsFile($url, $params, $key);
     }
