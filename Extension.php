@@ -136,6 +136,11 @@ class Extension
         $alias = ArrayHelper::getValue($params, 'as', StringHelper::basename($params['class']));
         $type = ArrayHelper::getValue($params, 'type', 'static');
 
+        // Skip already registered block and function
+        if (($type === 'block' || $type === 'function') && isset($this->smarty->registered_plugins[$type][$alias])) {
+            return;
+        }
+
         // Register the class during compile time
         $this->smarty->registerClass($alias, $class);
 
@@ -427,4 +432,4 @@ PHP;
       $val = @constant('yii\web\View::' . $string);
       return isset($val) ? $val : $default;
    }
-} 
+}

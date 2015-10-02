@@ -97,6 +97,13 @@ class ViewRendererTest extends TestCase
         $view->renderFile('@yiiunit/extensions/smarty/views/use.tpl');
     }
 
+    public function testInheritedUse()
+    {
+        $view = $this->mockView();
+        $content = $view->renderFile('@yiiunit/extensions/smarty/views/use.tpl');
+        $view->renderFile('@yiiunit/extensions/smarty/views/extended-layout.tpl', ['content' => $content]);
+    }
+
     /**
      * @return View
      */
