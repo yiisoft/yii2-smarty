@@ -8,3 +8,4 @@ Getting Started
 
 * [Installation](installation.md)
 * [Template Syntax](template-syntax.md)
+* [Advanced Usage](advanced-usage.md)
