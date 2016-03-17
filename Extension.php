@@ -31,6 +31,7 @@ class Extension
      */
     protected $smarty;
 
+
     /**
      * @param ViewRenderer $viewRenderer
      * @param Smarty $smarty
@@ -420,13 +421,13 @@ PHP;
     }
 
     /**
-    * Helper function to convert a textual constant identifier to a View class
-    * integer constant value.
-    *
-    * @param string $string Constant identifier name
-    * @param integer $default Default value
-    * @return mixed
-    */
+     * Helper function to convert a textual constant identifier to a View class
+     * integer constant value.
+     *
+     * @param string $string Constant identifier name
+     * @param integer $default Default value
+     * @return mixed
+     */
    protected function getViewConstVal($string, $default)
    {
       $val = @constant('yii\web\View::' . $string);

@@ -1,10 +1,11 @@
 Yii Framework 2 smarty extension Change Log
 ===========================================
 
-2.0.5 under development
------------------------
+2.0.5 March 17, 2016
+--------------------
 
 - Bug #12: Fixed SmartyException thrown when using multiple `{use}` for functions and blocks in inherited templates (freezy-sk)
+
 
 2.0.4 May 26, 2015
 ------------------
