@@ -8,3 +8,4 @@ Yii 2 Smarty エクステンション
 
 * [インストール](installation.md)
 * [テンプレート構文](template-syntax.md)
+* [高度な用法](advanced-usage.md)
