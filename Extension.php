@@ -41,18 +41,34 @@ class Extension
         $this->viewRenderer = $viewRenderer;
         $smarty = $this->smarty = $smarty;
 
-        $smarty->registerPlugin('function', 'path', [$this, 'functionPath']);
-        $smarty->registerPlugin('function', 'url', [$this, 'functionUrl']);
-        $smarty->registerPlugin('function', 'set', [$this, 'functionSet']);
-        $smarty->registerPlugin('function', 'meta', [$this, 'functionMeta']);
-        $smarty->registerPlugin('function', 'registerJsFile', [$this, 'functionRegisterJsFile']);
-        $smarty->registerPlugin('function', 'registerCssFile', [$this, 'functionRegisterCssFile']);
-        $smarty->registerPlugin('block', 'title', [$this, 'blockTitle']);
-        $smarty->registerPlugin('block', 'description', [$this, 'blockDescription']);
-        $smarty->registerPlugin('block', 'registerJs', [$this, 'blockJavaScript']);
-        $smarty->registerPlugin('block', 'registerCss', [$this, 'blockCss']);
-        $smarty->registerPlugin('compiler', 'use', [$this, 'compilerUse']);
-        $smarty->registerPlugin('modifier', 'void', [$this, 'modifierVoid']);
+        if (method_exists($smarty, 'registerPlugin')) {
+            // Smarty 3
+            $smarty->registerPlugin('function', 'path', [$this, 'functionPath']);
+            $smarty->registerPlugin('function', 'url', [$this, 'functionUrl']);
+            $smarty->registerPlugin('function', 'set', [$this, 'functionSet']);
+            $smarty->registerPlugin('function', 'meta', [$this, 'functionMeta']);
+            $smarty->registerPlugin('function', 'registerJsFile', [$this, 'functionRegisterJsFile']);
+            $smarty->registerPlugin('function', 'registerCssFile', [$this, 'functionRegisterCssFile']);
+            $smarty->registerPlugin('block', 'title', [$this, 'blockTitle']);
+            $smarty->registerPlugin('block', 'description', [$this, 'blockDescription']);
+            $smarty->registerPlugin('block', 'registerJs', [$this, 'blockJavaScript']);
+            $smarty->registerPlugin('block', 'registerCss', [$this, 'blockCss']);
+            $smarty->registerPlugin('compiler', 'use', [$this, 'compilerUse']);
+            $smarty->registerPlugin('modifier', 'void', [$this, 'modifierVoid']);
+        } else {
+            $smarty->register_function('path', [$this, 'functionPath']);
+            $smarty->register_function('url', [$this, 'functionUrl']);
+            $smarty->register_function('set', [$this, 'functionSet']);
+            $smarty->register_function('meta', [$this, 'functionMeta']);
+            $smarty->register_function('registerJsFile', [$this, 'functionRegisterJsFile']);
+            $smarty->register_function('registerCssFile', [$this, 'functionRegisterCssFile']);
+            $smarty->register_block('title', [$this, 'blockTitle']);
+            $smarty->register_block('description', [$this, 'blockDescription']);
+            $smarty->register_block('registerJs', [$this, 'blockJavaScript']);
+            $smarty->register_block('registerCss', [$this, 'blockCss']);
+            $smarty->register_compiler_function('use', [$this, 'compilerUse']);
+            $smarty->register_modifier('void', [$this, 'modifierVoid']);
+        }
     }
 
     /**

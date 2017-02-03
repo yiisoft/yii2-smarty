@@ -72,7 +72,8 @@ class ViewRenderer extends BaseViewRenderer
             $this->smarty->setCompileDir(Yii::getAlias($this->compilePath));
         } else {
             // Smarty 2
-            $this->smarty->compile_dir = Yii::getAlias($this->compilePath);
+            $this->initSmarty2();
+            return;
         }
 
         $this->smarty->setCacheDir(Yii::getAlias($this->cachePath));
@@ -116,6 +117,52 @@ class ViewRenderer extends BaseViewRenderer
 
         $this->smarty->default_template_handler_func = [$this, 'aliasHandler'];
     }
+
+    private function initSmarty2()
+    {
+        $this->smarty->compile_dir = Yii::getAlias($this->compilePath);
+        $this->smarty->cache_dir = Yii::getAlias($this->cachePath);
+
+        foreach ($this->options as $key => $value) {
+            $this->smarty->$key = $value;
+        }
+
+        $this->smarty->template_dir = dirname(Yii::$app->getView()->getViewFile());
+
+        // Add additional plugin dirs from configuration array, apply Yii's dir convention
+        foreach ($this->pluginDirs as &$dir) {
+            $dir = $this->resolveTemplateDir($dir);
+        }
+        $this->smarty->plugins_dir = $this->pluginDirs;
+
+        // TODO not supported in smarty 2?
+//        if (isset($this->imports)) {
+//            foreach(($this->imports) as $tag => $class) {
+//                $this->smarty->registerClass($tag, $class);
+//            }
+//        }
+        // Register block widgets specified in configuration array
+        if (isset($this->widgets['blocks'])) {
+            foreach(($this->widgets['blocks']) as $tag => $class) {
+                $this->smarty->register_block($tag, [$this, '_widget_block__' . $tag]);
+                // TODO not supported in smarty 2?
+//                $this->smarty->registerClass($tag, $class);
+            }
+        }
+        // Register function widgets specified in configuration array
+        if (isset($this->widgets['functions'])) {
+            foreach(($this->widgets['functions']) as $tag => $class) {
+                $this->smarty->register_function($tag, [$this, '_widget_function__' . $tag]);
+                // TODO not supported in smarty 2?
+//                $this->smarty->registerClass($tag, $class);
+            }
+        }
+
+        new $this->extensionClass($this, $this->smarty);
+
+        $this->smarty->default_template_handler_func = [$this, 'aliasHandler'];
+    }
+
 
     /**
      * The directory can be specified in Yii's standard convention
