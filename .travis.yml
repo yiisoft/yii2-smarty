@@ -5,10 +5,15 @@ php:
   - 5.5
   - 5.6
   - 7.0
+  - 7.1
   - hhvm
 
 # faster builds on new travis setup not using sudo
 sudo: false
+
+env:
+  - SMARTY_VERSION=2
+  - SMARTY_VERSION=3
 
 # cache vendor dirs
 cache:
@@ -20,6 +25,10 @@ install:
   - travis_retry composer global require "fxp/composer-asset-plugin:~1.1.1"
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - travis_retry composer install --prefer-dist --no-interaction
+  - |
+    if [ $SMARTY_VERSION -eq 2 ] ; then
+        travis_retry composer require --prefer-dist --no-interaction --update-with-dependencies "smarty/smarty:~2.6.0"
+    fi
 
 before_script:
   - |
