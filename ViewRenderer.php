@@ -67,14 +67,7 @@ class ViewRenderer extends BaseViewRenderer
     {
         $this->smarty = new Smarty();
 
-        if (method_exists($this->smarty, 'setCompileDir')) {
-            // Smarty 3
-            $this->smarty->setCompileDir(Yii::getAlias($this->compilePath));
-        } else {
-            // Smarty 2
-            $this->smarty->compile_dir = Yii::getAlias($this->compilePath);
-        }
-
+        $this->smarty->setCompileDir(Yii::getAlias($this->compilePath));
         $this->smarty->setCacheDir(Yii::getAlias($this->cachePath));
 
         foreach ($this->options as $key => $value) {

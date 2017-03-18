@@ -4,7 +4,7 @@ Yii Framework 2 smarty extension Change Log
 2.0.6 under development
 -----------------------
 
-- Bug #17: Fixed Smarty 2 compatibility (samdark)
+- Bug #17: Updated Composer constraints to reflect the fact that it requires Smarty 3 (samdark)
 
 
 2.0.5 March 17, 2016
