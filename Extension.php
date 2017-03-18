@@ -425,7 +425,7 @@ PHP;
      * integer constant value.
      *
      * @param string $string Constant identifier name
-     * @param integer $default Default value
+     * @param int $default Default value
      * @return mixed
      */
    protected function getViewConstVal($string, $default)

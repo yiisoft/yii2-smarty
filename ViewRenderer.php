@@ -262,7 +262,7 @@ class ViewRenderer extends BaseViewRenderer
      * @param string $content
      * @param string $modified
      * @param Smarty $smarty
-     * @return boolean|string path to file or false if it's not found
+     * @return bool|string path to file or false if it's not found
      */
     public function aliasHandler($type, $name, &$content, &$modified, Smarty $smarty)
     {
