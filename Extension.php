@@ -138,18 +138,24 @@ class Extension
         $type = ArrayHelper::getValue($params, 'type', 'static');
 
         // Skip already registered block and function
-        if (($type === 'block' || $type === 'function') && isset($this->smarty->registered_plugins[$type][$alias])) {
-            return;
+        if (($type === 'block' || $type === 'function') && !isset($this->smarty->registered_plugins[$type][$alias])) {
+            // Register the class during compile time
+            $this->smarty->registerClass($alias, $class);
+
+            if ($type === 'block') {
+                // Register widget tag during compile time
+                $this->viewRenderer->widgets['blocks'][$alias] = $class;
+                // Register widget tag during compile time
+                $this->smarty->registerPlugin('block', $alias, [$this->viewRenderer, '_widget_block__' . $alias]);
+            } elseif ($type === 'function') {
+                // Register widget tag during compile time
+                $this->viewRenderer->widgets['functions'][$alias] = $class;
+                // Register widget tag during compile time
+                $this->smarty->registerPlugin('function', $alias, [$this->viewRenderer, '_widget_function__' . $alias]);
+            }
         }
 
-        // Register the class during compile time
-        $this->smarty->registerClass($alias, $class);
-
         if ($type === 'block') {
-            // Register widget tag during compile time
-            $this->viewRenderer->widgets['blocks'][$alias] = $class;
-            $this->smarty->registerPlugin('block', $alias, [$this->viewRenderer, '_widget_block__' . $alias]);
-
             // Inject code to re-register widget tag during run-time
             return <<<PHP
 <?php
@@ -164,10 +170,6 @@ class Extension
 ?>
 PHP;
         } elseif ($type === 'function') {
-            // Register widget tag during compile time
-            $this->viewRenderer->widgets['functions'][$alias] = $class;
-            $this->smarty->registerPlugin('function', $alias, [$this->viewRenderer, '_widget_function__' . $alias]);
-
             // Inject code to re-register widget tag during run-time
             return <<<PHP
 <?php
