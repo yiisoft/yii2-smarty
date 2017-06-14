@@ -137,11 +137,11 @@ class Extension
         $alias = ArrayHelper::getValue($params, 'as', StringHelper::basename($params['class']));
         $type = ArrayHelper::getValue($params, 'type', 'static');
 
-        // Skip already registered block and function
-        if (($type === 'block' || $type === 'function') && !isset($this->smarty->registered_plugins[$type][$alias])) {
+        if (!isset($this->smarty->registered_plugins[$type][$alias])) {
             // Register the class during compile time
             $this->smarty->registerClass($alias, $class);
 
+            // Skip already registered block and function
             if ($type === 'block') {
                 // Register widget tag during compile time
                 $this->viewRenderer->widgets['blocks'][$alias] = $class;
