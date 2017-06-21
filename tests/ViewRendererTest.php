@@ -104,6 +104,16 @@ class ViewRendererTest extends TestCase
         $view->renderFile('@yiiunit/extensions/smarty/views/extended-layout.tpl', ['content' => $content]);
     }
 
+    public function testIssue23()
+    {
+        $view = $this->mockViewCompileOnce();
+        $view->renderFile('@yiiunit/extensions/smarty/views/issue23_t1.tpl');
+        $view->renderFile('@yiiunit/extensions/smarty/views/issue23_t2.tpl');
+
+        $view = $this->mockViewCompileOnce();
+        $view->renderFile('@yiiunit/extensions/smarty/views/issue23_t2.tpl');
+    }
+
     /**
      * @return View
      */
@@ -115,6 +125,24 @@ class ViewRendererTest extends TestCase
                     'class' => 'yii\smarty\ViewRenderer',
                     'options' => [
                         'force_compile' => true, // always recompile templates, don't do it in production
+                    ],
+                ],
+            ],
+            'assetManager' => $this->mockAssetManager(),
+        ]);
+    }
+
+    /**
+     * @return View
+     */
+    protected function mockViewCompileOnce()
+    {
+        return new View([
+            'renderers' => [
+                'tpl' => [
+                    'class' => 'yii\smarty\ViewRenderer',
+                    'options' => [
+                        'force_compile' => false,
                     ],
                 ],
             ],
