@@ -8,7 +8,6 @@
 namespace yii\smarty;
 
 use Yii;
-use Smarty;
 use yii\web\View;
 use yii\base\Widget;
 use yii\base\ViewRenderer as BaseViewRenderer;
@@ -53,7 +52,10 @@ class ViewRenderer extends BaseViewRenderer
      * @var string extension class name
      */
     public $extensionClass = '\yii\smarty\Extension';
-
+    /**
+     * @var string The Smarty class
+     */
+    public $smartyClass = '\Smarty';
     /**
      * @var Smarty The Smarty object used for rendering
      */
@@ -65,7 +67,7 @@ class ViewRenderer extends BaseViewRenderer
      */
     public function init()
     {
-        $this->smarty = new Smarty();
+        $this->smarty = new $this->smartyClass();
 
         $this->smarty->setCompileDir(Yii::getAlias($this->compilePath));
         $this->smarty->setCacheDir(Yii::getAlias($this->cachePath));
