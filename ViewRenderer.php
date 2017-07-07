@@ -54,6 +54,7 @@ class ViewRenderer extends BaseViewRenderer
     public $extensionClass = '\yii\smarty\Extension';
     /**
      * @var string The Smarty class
+     * @since 2.0.7
      */
     public $smartyClass = '\Smarty';
     /**
