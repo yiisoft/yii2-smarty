@@ -8,6 +8,7 @@
 namespace yii\smarty;
 
 use Yii;
+use Smarty;
 use yii\web\View;
 use yii\base\Widget;
 use yii\base\ViewRenderer as BaseViewRenderer;
