@@ -5,6 +5,7 @@ Yii Framework 2 smarty extension Change Log
 -----------------------
 
 - Bug #23: Fixed widget registration and rendering code generation inside subtemplates (eymerich)
+- Enh #25: Give a choice to use SmartyBC class (a761208)
 
 
 2.0.6 March 18, 2017

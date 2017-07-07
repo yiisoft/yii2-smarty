@@ -126,6 +126,13 @@ class ViewRendererTest extends TestCase
         $this->assertTrue(true, 'no error');
     }
 
+    public function testSmartyClass()
+    {
+        $view = $this->mockSmartyBCView();
+        $content = $view->renderFile('@yiiunit/extensions/smarty/views/bc.tpl');
+        $this->assertTrue(strpos($content, date('Ymd')) !== false, 'A date should be there: ' . $content);
+    }
+
     /**
      * @return View
      */
@@ -135,6 +142,22 @@ class ViewRendererTest extends TestCase
             'renderers' => [
                 'tpl' => [
                     'class' => 'yii\smarty\ViewRenderer',
+                    'options' => [
+                        'force_compile' => true, // always recompile templates, don't do it in production
+                    ],
+                ],
+            ],
+            'assetManager' => $this->mockAssetManager(),
+        ]);
+    }
+
+    protected function mockSmartyBCView()
+    {
+        return new View([
+            'renderers' => [
+                'tpl' => [
+                    'class' => 'yii\smarty\ViewRenderer',
+                    'smartyClass' => '\SmartyBC',
                     'options' => [
                         'force_compile' => true, // always recompile templates, don't do it in production
                     ],
