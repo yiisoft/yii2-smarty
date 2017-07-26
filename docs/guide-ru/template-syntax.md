@@ -6,9 +6,6 @@
 
 ## Установка свойств объекта
 
-There's a special function called `set` that allows you to set common properties of the view and controller. Currently
-available properties are `title`, `theme` and `layout`:
-
 Специальная функция `set` позволяет устанавливать основные свойства вида и контроллера. На данный момент доступны
 свойства `title`, `theme` и `layout`:
 
@@ -76,8 +73,6 @@ available properties are `title`, `theme` and `layout`:
 {/ActiveForm}
 ```
 
-If you're using particular widget a lot, it is a good idea to declare it in application config and remove `{use class`
-call from templates:
 Если какой-либо виджет используется практически везде, то лучше объявить его в конфиге приложения и убрать из шаблонов 
 вызовы `{use class`:
 
