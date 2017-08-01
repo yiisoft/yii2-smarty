@@ -21,15 +21,6 @@
         "yiisoft/yii2": "~2.0.0",
         "smarty/smarty": "~3.1.0"
     },
-    "config": {
-        "process-timeout": 1800,
-        "fxp-asset":{
-            "installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
-        }
-    },
     "repositories": [
         {
             "type": "composer",
