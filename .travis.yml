@@ -1,11 +1,13 @@
 language: php
 
 php:
-- 5.4
-- 5.5
-- 5.6
-- 7.0
-- 7.1
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+
 matrix:
   include:
   - php: hhvm
@@ -17,7 +19,8 @@ matrix:
     before_install:
     - wget https://phar.phpunit.de/phpunit-4.5.1.phar
     script:
-    - php phpunit-4.5.1.phar --verbose $PHPUNIT_FLAGS
+    - php phpunit-4.5.1.phar $PHPUNIT_FLAGS
+
 sudo: false
 
 # cache vendor dirs
@@ -37,7 +40,7 @@ before_script:
     fi
 
 script:
-  - phpunit --verbose $PHPUNIT_FLAGS
+  - phpunit $PHPUNIT_FLAGS
 
 after_script:
   - |
