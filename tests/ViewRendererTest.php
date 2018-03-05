@@ -94,16 +94,26 @@ class ViewRendererTest extends TestCase
     public function testUse()
     {
         $view = $this->mockView();
-        $view->renderFile('@yiiunit/extensions/smarty/views/use.tpl');
+        $content = $view->renderFile('@yiiunit/extensions/smarty/views/use.tpl');
+        $this->assertContains('<form id="', $content);
+        $this->assertContains('<ul class="', $content);
     }
 
+    /**
+     * @depends testUse
+     */
     public function testInheritedUse()
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/extensions/smarty/views/use.tpl');
         $view->renderFile('@yiiunit/extensions/smarty/views/extended-layout.tpl', ['content' => $content]);
+        $this->assertContains('<form id="', $content);
+        $this->assertContains('<ul class="', $content);
     }
 
+    /**
+     * @see https://github.com/yiisoft/yii2-smarty/issues/23
+     */
     public function testIssue23()
     {
         $view = $this->mockViewCompileOnce();
@@ -112,6 +122,8 @@ class ViewRendererTest extends TestCase
 
         $view = $this->mockViewCompileOnce();
         $view->renderFile('@yiiunit/extensions/smarty/views/issue23_t2.tpl');
+
+        $this->assertTrue(true, 'no error');
     }
 
     /**
