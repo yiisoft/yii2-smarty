@@ -28,7 +28,7 @@
         }
     ],
     "autoload": {
-        "psr-4": {"yii\\smarty\\": ""}
+        "psr-4": {"yii\\smarty\\": "src"}
     },
     "extra": {
         "branch-alias": {
