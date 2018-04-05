@@ -10,7 +10,7 @@ Smarty のテンプレートの構文を学ぶための最善のリソースは�
 現在サポートされているプロパティは、`title`、`theme` および `layout` です。
 
 ```
-{set title="My Page"}
+{set title="俺のページ"}
 {set theme="frontend"}
 {set layout="main.tpl"}
 ```
@@ -21,9 +21,9 @@ Smarty のテンプレートの構文を学ぶための最善のリソースは�
 {title}My Page{/title}
 ```
 
-## メタタグを設定する
+## メタ・タグを設定する
 
-メタタグは次のようにして設定することが出来ます。
+メタ・タグは次のようにして設定することが出来ます。
 
 ```
 {meta keywords="Yii,PHP,Smarty,framework"}
@@ -48,7 +48,7 @@ Smarty のテンプレートの構文を学ぶための最善のリソースは�
 {Html::mailto('eugenia@example.com')}
 ```
 
-必要であれば、カスタムエイリアスを設定することも出来ます。
+必要であれば、カスタム・エイリアスを設定することも出来ます。
 
 ```
 {use class="yii\helpers\Html" as="Markup"}
@@ -113,10 +113,10 @@ ActiveForm のように `begin` および `end` メソッドを持つウィジ�
 最初の場合では、現在のテンプレートのパスからの相対的なパスでビューを探します。
 `comment.tpl` と `post.tpl` は、現在レンダリングされているテンプレートと同じディレクトリで探されます。
 
-第二の場合では、パスエイリアスを使います。
+第二の場合では、パス・エイリアスを使います。
 `@app` のような全ての Yii のエイリアスがデフォルトで利用できます。
 
-## CSS、JavaScript およびアセットバンドル
+## CSS、JavaScript およびアセット・バンドル
 
 JavaScript と CSS のファイルを登録するためには、次の構文を使うことが出来ます。
 
@@ -139,7 +139,7 @@ div.header {
 {/registerCss}
 ```
 
-アセットバンドルは次のようにして登録することが出来ます。
+アセット・バンドルは次のようにして登録することが出来ます。
 
 ```
 {use class="yii\web\JqueryAsset"}
