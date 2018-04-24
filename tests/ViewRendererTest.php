@@ -129,7 +129,7 @@ class ViewRendererTest extends TestCase
     public function testSmartyClass()
     {
         $view = $this->mockSmartyBCView();
-        $content = $view->renderFile('@yiiunit/extensions/smarty/views/bc.tpl');
+        $content = $view->renderFile('@yiiunit/smarty/views/bc.tpl');
         $this->assertTrue(strpos($content, date('Ymd')) !== false, 'A date should be there: ' . $content);
     }
 
