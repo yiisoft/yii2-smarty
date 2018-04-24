@@ -58,6 +58,7 @@ class ViewRenderer extends BaseViewRenderer
      * @since 2.0.7
      */
     public $smartyClass = '\Smarty';
+
     /**
      * @var Smarty The Smarty object used for rendering
      */
