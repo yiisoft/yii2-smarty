@@ -1,7 +1,8 @@
 テンプレート構文
 ================
 
-Smarty のテンプレートの構文を学ぶための最善のリソースは、[www.smarty.net](http://www.smarty.net/docs/ja/) にある公式ドキュメントです。
+Smarty のテンプレートの構文を学ぶための最善のリソースは、[www.smarty.net](http://www.smarty.net/docs/ja/)
+にある公式ドキュメントです。
 それに追加して、下記に説明する Yii 固有の拡張構文があります。
 
 ## オブジェクトのプロパティを設定する
@@ -77,7 +78,8 @@ ActiveForm のように `begin` および `end` メソッドを持つウィジ�
 {/ActiveForm}
 ```
 
-特定のウィジェットを多用する場合は、それをアプリケーション構成の中で宣言して、テンプレートから `{use class` の呼び出しを削除するのが良いアイデアです。
+特定のウィジェットを多用する場合は、それをアプリケーション構成の中で宣言して、テンプレートから 
+`{use class` の呼び出しを削除するのが良いアイデアです。
 
 ```php
 'components' => [
@@ -101,7 +103,6 @@ ActiveForm のように `begin` および `end` メソッドを持つウィジ�
 
 `include` と `extends` 文によるテンプレートの参照には、主として二つの方法があります。
 
-
 ```
 {include 'comment.tpl'}
 {extends 'post.tpl'}
@@ -113,8 +114,7 @@ ActiveForm のように `begin` および `end` メソッドを持つウィジ�
 最初の場合では、現在のテンプレートのパスからの相対的なパスでビューを探します。
 `comment.tpl` と `post.tpl` は、現在レンダリングされているテンプレートと同じディレクトリで探されます。
 
-第二の場合では、パス・エイリアスを使います。
-`@app` のような全ての Yii のエイリアスがデフォルトで利用できます。
+第二の場合では、パス・エイリアスを使います。`@app` のような全ての Yii のエイリアスがデフォルトで利用できます。
 
 ## CSS、JavaScript およびアセット・バンドル
 
@@ -126,6 +126,7 @@ JavaScript と CSS のファイルを登録するためには、次の構文を�
 ```
 
 JavaScript と CSS をテンプレートに直接書きたい場合は、便利なブロックがあります。
+
 ```
 {registerJs key='show' position='POS_LOAD'}
     $("span.show").replaceWith('<div class="show">');
@@ -157,8 +158,7 @@ URL を構築するのに使える二つの関数があります。
 <a href="{url route='blog/view' alias=$post.alias}">{$post.title}</a>
 ```
 
-`path` は相対的な URL を生成し、`url` は絶対的な URL を生成します。
-内部的には、両者とも、[[\yii\helpers\Url]] を使っています。
+`path` は相対的な URL を生成し、`url` は絶対的な URL を生成します。内部的には、両者とも、[[\yii\helpers\Url]] を使っています。
 
 ## 追加の変数
 
@@ -169,7 +169,8 @@ Smarty のテンプレート内では、次の変数が常に定義されてい�
 
 ## 構成情報のパラメータにアクセスする
 
-アプリケーションにおいて `Yii::$app->params->something` によって取得できるパラメータは、次のようにして使用することが出来ます。
+アプリケーションにおいて `Yii::$app->params->something` によって取得できるパラメータは、
+次のようにして使用することが出来ます。
 
 ```
 `{#something#}`

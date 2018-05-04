@@ -5,7 +5,8 @@
 
 ## GridView のカラムの値としてコールバックを使う
 
-Smarty の文法の制約によって、次の PHP の例のように、無名関数を値として渡すことは出来ません。
+Smarty の文法の制約によって、次の PHP の例のように、
+無名関数を値として渡すことは出来ません。
 
 ```php
 echo GridView::widget([
@@ -20,8 +21,7 @@ echo GridView::widget([
 ]);
 ```
 
-しかし、目的を達する方法はあります。
-まず、値をフォーマットするロジックを定義するスタティックな関数を持つ、ヘルパ・クラスを作ります。
+しかし、目的を達する方法はあります。まず、値をフォーマットするロジックを定義するスタティックな関数を持つ、ヘルパ・クラスを作ります。
 
 ```php
 <?php
@@ -82,7 +82,8 @@ class GridHelper
 }
 ```
 
-そして、`{use class='app\helpers\GridHelper'}` によって `GridHelper` をロードし、`GridHelper` に属するスタティックな関数を呼ぶように `urlCreator` を設定します。
+そして、`{use class='app\helpers\GridHelper'}` によって `GridHelper` をロードし、
+`GridHelper` に属するスタティックな関数を呼ぶように `urlCreator` を設定します。
 
 ```smarty
 {use class='app\helpers\GridHelper'}
