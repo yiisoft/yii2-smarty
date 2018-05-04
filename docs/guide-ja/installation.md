@@ -1,8 +1,7 @@
 インストール
 ============
 
-インストールは二つの部分から成ります。
-すなわち、composer パッケージの取得と、アプリケーションの構成です。 
+インストールは二つの部分から成ります。すなわち、composer パッケージの取得と、アプリケーションの構成です。 
 
 ## エクステンションをインストールする
 
@@ -14,11 +13,13 @@
 php composer.phar require --prefer-dist yiisoft/yii2-smarty
 ```
 
-または、あなたの `composer.json` ファイルの `require` セクションに、下記を追加してください。
+または、あなたの `composer.json` ファイルの `require` セクションに、
 
 ```
 "yiisoft/yii2-smarty": "~2.0.0"
 ```
+
+を追加してください。
 
 smarty の composer パッケージは subversion を使って配布されていますので、subversion をインストールする必要があることに注意してください。
 
