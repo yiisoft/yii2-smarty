@@ -212,7 +212,13 @@ class ViewRenderer extends BaseViewRenderer
         } else {
             $widget = array_pop(Widget::$stack);
             echo $content;
-            $out = $widget->run();
+            if ($widget->beforeRun()) { // respect $event->isValid even here
+                $out = $widget->run();
+                $out = $widget->afterRun($out);
+            } else {
+                $out = '';
+            }
+            
             return ob_get_clean() . $out;
         }
     }
