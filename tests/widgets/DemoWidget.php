@@ -9,7 +9,8 @@ namespace yiiunit\smarty\widgets;
 
 use yii\base\Widget;
 
-class DemoWidget extends Widget {
+class DemoWidget extends Widget
+{
     /**
      * @var boolean Prevent
      */
@@ -18,7 +19,8 @@ class DemoWidget extends Widget {
     /**
      * {@inheritdoc}
      */
-    public function init() {
+    public function init()
+    {
         parent::init();
 
         if ($this->hidden) {
@@ -33,7 +35,8 @@ class DemoWidget extends Widget {
     /**
      * {@inheritdoc}
      */
-    public function run() {
+    public function run()
+    {
         return 'test';
     }
 }

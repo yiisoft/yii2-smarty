@@ -55,7 +55,9 @@ class ViewRendererTest extends TestCase
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/layout.tpl');
 
-        $this->assertEquals(1, preg_match('#<script src="/assets/[0-9a-z]+/jquery\\.js"></script>\s*</body>#', $content), 'Content does not contain the jquery js:' . $content);
+        $this->assertEquals(1,
+            preg_match('#<script src="/assets/[0-9a-z]+/jquery\\.js"></script>\s*</body>#', $content),
+            'Content does not contain the jquery js:' . $content);
     }
 
 
@@ -66,7 +68,8 @@ class ViewRendererTest extends TestCase
 
         $content = $view->renderFile('@yiiunit/smarty/views/changeTitle.tpl');
         $this->assertTrue(strpos($content, 'New title') !== false, 'New title should be there:' . $content);
-        $this->assertFalse(strpos($content, 'Original title') !== false, 'Original title should not be there:' . $content);
+        $this->assertFalse(strpos($content, 'Original title') !== false,
+            'Original title should not be there:' . $content);
     }
 
     public function testForm()
@@ -74,21 +77,27 @@ class ViewRendererTest extends TestCase
         $view = $this->mockView();
         $model = new Singer();
         $content = $view->renderFile('@yiiunit/smarty/views/form.tpl', ['model' => $model]);
-        $this->assertEquals(1, preg_match('#<form id="login-form" class="form-horizontal" action="/form-handler" method="post">.*?</form>#s', $content), 'Content does not contain form:' . $content);
+        $this->assertEquals(1,
+            preg_match('#<form id="login-form" class="form-horizontal" action="/form-handler" method="post">.*?</form>#s',
+                $content), 'Content does not contain form:' . $content);
     }
 
     public function testInheritance()
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/extends2.tpl');
-        $this->assertTrue(strpos($content, 'Hello, I\'m inheritance test!') !== false, 'Hello, I\'m inheritance test! should be there:' . $content);
+        $this->assertTrue(strpos($content, 'Hello, I\'m inheritance test!') !== false,
+            'Hello, I\'m inheritance test! should be there:' . $content);
         $this->assertTrue(strpos($content, 'extends2 block') !== false, 'extends2 block should be there:' . $content);
-        $this->assertFalse(strpos($content, 'extends1 block') !== false, 'extends1 block should not be there:' . $content);
+        $this->assertFalse(strpos($content, 'extends1 block') !== false,
+            'extends1 block should not be there:' . $content);
 
         $content = $view->renderFile('@yiiunit/smarty/views/extends3.tpl');
-        $this->assertTrue(strpos($content, 'Hello, I\'m inheritance test!') !== false, 'Hello, I\'m inheritance test! should be there:' . $content);
+        $this->assertTrue(strpos($content, 'Hello, I\'m inheritance test!') !== false,
+            'Hello, I\'m inheritance test! should be there:' . $content);
         $this->assertTrue(strpos($content, 'extends3 block') !== false, 'extends3 block should be there:' . $content);
-        $this->assertFalse(strpos($content, 'extends1 block') !== false, 'extends1 block should not be there:' . $content);
+        $this->assertFalse(strpos($content, 'extends1 block') !== false,
+            'extends1 block should not be there:' . $content);
     }
 
     public function testUse()
@@ -133,13 +142,15 @@ class ViewRendererTest extends TestCase
         $this->assertTrue(strpos($content, date('Ymd')) !== false, 'A date should be there: ' . $content);
     }
 
-    public function testWidgetDefault() {
+    public function testWidgetDefault()
+    {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/widget-default.tpl');
         $this->assertContains('<div class="widget">test</div>', $content);
     }
 
-    public function testWidgetHidden() {
+    public function testWidgetHidden()
+    {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/widget-invalid.tpl');
         $this->assertNotContains('<div class="widget">test</div>', $content);

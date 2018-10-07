@@ -1,7 +1,11 @@
 {
     "name": "yiisoft/yii2-smarty",
     "description": "The Smarty integration for the Yii framework",
-    "keywords": ["yii2", "smarty", "renderer"],
+    "keywords": [
+        "yii2",
+        "smarty",
+        "renderer"
+    ],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
@@ -32,7 +36,9 @@
         }
     ],
     "autoload": {
-        "psr-4": {"yii\\smarty\\": "src"}
+        "psr-4": {
+            "yii\\smarty\\": "src"
+        }
     },
     "autoload-dev": {
         "psr-4": {
