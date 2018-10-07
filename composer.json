@@ -21,6 +21,10 @@
         "yiisoft/yii2": "~2.0.0",
         "smarty/smarty": "~3.1.0"
     },
+    "require-dev": {
+        "yiisoft/yii2-coding-standards": "~2.0",
+        "phpunit/phpunit": "*"
+    },
     "repositories": [
         {
             "type": "composer",
@@ -29,6 +33,11 @@
     ],
     "autoload": {
         "psr-4": {"yii\\smarty\\": "src"}
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "yiiunit\\smarty\\": "tests"
+        }
     },
     "extra": {
         "branch-alias": {

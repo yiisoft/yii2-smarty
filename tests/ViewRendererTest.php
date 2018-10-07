@@ -133,6 +133,18 @@ class ViewRendererTest extends TestCase
         $this->assertTrue(strpos($content, date('Ymd')) !== false, 'A date should be there: ' . $content);
     }
 
+    public function testWidgetDefault() {
+        $view = $this->mockView();
+        $content = $view->renderFile('@yiiunit/smarty/views/widget-default.tpl');
+        $this->assertContains('<div class="widget">test</div>', $content);
+    }
+
+    public function testWidgetHidden() {
+        $view = $this->mockView();
+        $content = $view->renderFile('@yiiunit/smarty/views/widget-invalid.tpl');
+        $this->assertNotContains('<div class="widget">test</div>', $content);
+    }
+
     /**
      * @return View
      */
