@@ -4,7 +4,7 @@ Yii Framework 2 smarty extension Change Log
 2.0.8 under development
 -----------------------
 
-- Enh #31: Respect widget events (copies behavior of [Widget::end()](https://github.com/yiisoft/yii2/blob/master/framework/base/Widget.php#L108) method).
+- Enh #31: Respect widget events (simialbi)
 
 
 2.0.7 April 25, 2018
