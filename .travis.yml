@@ -19,13 +19,16 @@ matrix:
     before_install:
     - wget https://phar.phpunit.de/phpunit-4.5.1.phar
     script:
-    - php phpunit-4.5.1.phar $PHPUNIT_FLAGS
+    - php phpunit-4.5.1.phar $PHPUNIT_FLAGS    
+  allow_failures:
+    - php: hhvm
 
 sudo: false
 
 # cache vendor dirs
 cache:
   directories:
+    - vendor
     - $HOME/.composer/cache
 
 install:
