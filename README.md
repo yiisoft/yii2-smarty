@@ -1,5 +1,10 @@
-Smarty Extension for Yii 2
-==========================
+<p align="center">
+    <a href="https://www.smarty.net/" target="_blank">
+        <img src="https://www.smarty.net/images/logo.png" height="74px">
+    </a>
+    <h1 align="center">Smarty Extension for Yii 2</h1>
+    <br>
+</p>
 
 This extension provides a `ViewRender` that would allow you to use [Smarty](http://www.smarty.net/) view template engine
 with [Yii framework 2.0](http://www.yiiframework.com).

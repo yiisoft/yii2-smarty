@@ -1,5 +1,6 @@
 <?php
-namespace yiiunit\extensions\smarty\data;
+
+namespace yiiunit\smarty\data;
 
 use yii\base\Model;
 

@@ -53,6 +53,11 @@ class ViewRenderer extends BaseViewRenderer
      * @var string extension class name
      */
     public $extensionClass = '\yii\smarty\Extension';
+    /**
+     * @var string The Smarty class
+     * @since 2.0.7
+     */
+    public $smartyClass = '\Smarty';
 
     /**
      * @var Smarty The Smarty object used for rendering
@@ -65,7 +70,7 @@ class ViewRenderer extends BaseViewRenderer
      */
     public function init()
     {
-        $this->smarty = new Smarty();
+        $this->smarty = new $this->smartyClass();
 
         $this->smarty->setCompileDir(Yii::getAlias($this->compilePath));
         $this->smarty->setCacheDir(Yii::getAlias($this->cachePath));
@@ -207,7 +212,13 @@ class ViewRenderer extends BaseViewRenderer
         } else {
             $widget = array_pop(Widget::$stack);
             echo $content;
-            $out = $widget->run();
+            if ($widget->beforeRun()) { // respect $event->isValid even here
+                $out = $widget->run();
+                $out = $widget->afterRun($out);
+            } else {
+                $out = '';
+            }
+            
             return ob_get_clean() . $out;
         }
     }

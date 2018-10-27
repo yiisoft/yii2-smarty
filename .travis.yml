@@ -1,5 +1,3 @@
-dist: trusty
-
 language: php
 
 php:
@@ -8,20 +6,33 @@ php:
   - 5.6
   - 7.0
   - 7.1
-  - nightly
-  - hhvm
+  - 7.2
 
-# faster builds on new travis setup not using sudo
+matrix:
+  include:
+  - php: hhvm
+    sudo: true
+    dist: trusty
+    group: edge
+    cache:
+      directories: "$HOME/.composer/cache"
+    before_install:
+    - wget https://phar.phpunit.de/phpunit-4.5.1.phar
+    script:
+    - php phpunit-4.5.1.phar $PHPUNIT_FLAGS    
+  allow_failures:
+    - php: hhvm
+
 sudo: false
 
 # cache vendor dirs
 cache:
   directories:
+    - vendor
     - $HOME/.composer/cache
 
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer global require "fxp/composer-asset-plugin:~1.3.1"
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - travis_retry composer install --prefer-dist --no-interaction
 
@@ -32,7 +43,7 @@ before_script:
     fi
 
 script:
-  - phpunit --verbose $PHPUNIT_FLAGS
+  - phpunit $PHPUNIT_FLAGS
 
 after_script:
   - |

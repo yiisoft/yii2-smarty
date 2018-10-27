@@ -1,7 +1,11 @@
 {
     "name": "yiisoft/yii2-smarty",
     "description": "The Smarty integration for the Yii framework",
-    "keywords": ["yii2", "smarty", "renderer"],
+    "keywords": [
+        "yii2",
+        "smarty",
+        "renderer"
+    ],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
@@ -21,16 +25,29 @@
         "yiisoft/yii2": "~2.0.0",
         "smarty/smarty": "~3.1.0"
     },
+    "require-dev": {
+        "yiisoft/yii2-coding-standards": "~2.0",
+        "phpunit/phpunit": "*"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "autoload": {
-        "psr-4": { "yii\\smarty\\": "" }
+        "psr-4": {
+            "yii\\smarty\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "yiiunit\\smarty\\": "tests"
+        }
     },
     "extra": {
         "branch-alias": {
             "dev-master": "2.0.x-dev"
-        },
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
         }
     }
 }
