@@ -1,8 +1,8 @@
 Yii Framework 2 smarty extension Change Log
 ===========================================
 
-2.0.8 under development
------------------------
+2.0.8 April 16, 2019
+--------------------
 
 - Enh #31: Respect widget events (simialbi)
 
