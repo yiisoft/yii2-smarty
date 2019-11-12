@@ -30,11 +30,26 @@ class ExtensionTest extends TestCase
         FileHelper::removeDirectory(Yii::getAlias('@runtime/Smarty'));
     }
 
-    public function testFunctionJs()
+    public function testFunctions()
     {
+        $functions = [
+            'path' => 'functionPath',
+            'url' => 'functionUrl',
+            'set' => 'functionSet',
+            'meta'=> 'functionMeta',
+            'js' => 'functionJs',
+            'registerJsFile' => 'functionRegisterJsFile',
+            'registerCssFile' => 'functionRegisterCssFile'
+        ];
+
         $renderer = new TestViewRenderer();
         $smarty = $renderer->getSmartyInstance();
-        $this->assertArrayHasKey('js', $smarty->registered_plugins['function']);
+
+        foreach ($functions as $name => $func) {
+            $function = $smarty->registered_plugins['function'];
+            $this->assertArrayHasKey($name, $function);
+            $this->assertEquals($func, $function[$name][0][1]);
+        }
     }
 }
 
