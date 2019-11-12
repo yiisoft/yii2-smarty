@@ -46,7 +46,7 @@ class Extension
         $smarty->registerPlugin('function', 'url', [$this, 'functionUrl']);
         $smarty->registerPlugin('function', 'set', [$this, 'functionSet']);
         $smarty->registerPlugin('function', 'meta', [$this, 'functionMeta']);
-        $smarty->registerPlugin('function', 'jsexpr', [$this, 'functionJsExpr']);
+        $smarty->registerPlugin('function', 'js', [$this, 'functionJs']);
         $smarty->registerPlugin('function', 'registerJsFile', [$this, 'functionRegisterJsFile']);
         $smarty->registerPlugin('function', 'registerCssFile', [$this, 'functionRegisterCssFile']);
         $smarty->registerPlugin('block', 'title', [$this, 'blockTitle']);
@@ -259,21 +259,21 @@ PHP;
      *
      * Usage is the following:
      *
-     * {jsexpr assign='expr' expression='function(){alert('expression');}}'}
+     * {js assign='expr' expression='function(){alert('expression');}}'}
      *
      * @param array $params
      * @param \Smarty_Internal_Template $template
      *
      * @return string
      */
-    public function functionJsExpr($params, \Smarty_Internal_Template $template)
+    public function functionJs($params, \Smarty_Internal_Template $template)
     {
         if (!isset($params['expression'])) {
-            trigger_error("expression: missing 'jsexpr' parameter");
+            trigger_error("expression: missing 'js' parameter");
         }
 
         if (!isset($params['assign'])) {
-            trigger_error("assign: missing 'jsexpr' parameter");
+            trigger_error("assign: missing 'js' parameter");
         }
 
         $template->assign($params['assign'], new JsExpression($params['expression']));

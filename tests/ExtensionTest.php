@@ -30,11 +30,11 @@ class ExtensionTest extends TestCase
         FileHelper::removeDirectory(Yii::getAlias('@runtime/Smarty'));
     }
 
-    public function testJsExpr()
+    public function testFunctionJs()
     {
         $renderer = new TestViewRenderer();
         $smarty = $renderer->getSmartyInstance();
-        $this->assertArrayHasKey('jsexpr', $smarty->registered_plugins['function']);
+        $this->assertArrayHasKey('js', $smarty->registered_plugins['function']);
     }
 }
 

@@ -4,7 +4,7 @@ Yii Framework 2 smarty extension Change Log
 2.0.9 under development
 -----------------------
 
-- Enh #36: Added `{jsexpr}` function to instantiate `yii\web\JsExpression` (leandrogehlen)
+- Enh #36: Added `{js}` function allowing instantiate `yii\web\JsExpression` (leandrogehlen)
 
 2.0.8 April 16, 2019
 --------------------
