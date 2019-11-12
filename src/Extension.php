@@ -254,7 +254,7 @@ PHP;
         Yii::$app->getView()->registerMetaTag($params, $key);
     }
 
-     /**
+    /**
      * Smarty template function to instantiate JsExpression
      *
      * Usage is the following:
