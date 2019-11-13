@@ -265,6 +265,7 @@ PHP;
      * @param \Smarty_Internal_Template $template
      *
      * @return string
+     * @since 2.0.9
      */
     public function functionJs($params, \Smarty_Internal_Template $template)
     {
