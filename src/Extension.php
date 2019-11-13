@@ -12,6 +12,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\StringHelper;
 use yii\helpers\Url;
+use yii\web\JsExpression;
 use yii\web\View;
 
 /**
@@ -45,6 +46,7 @@ class Extension
         $smarty->registerPlugin('function', 'url', [$this, 'functionUrl']);
         $smarty->registerPlugin('function', 'set', [$this, 'functionSet']);
         $smarty->registerPlugin('function', 'meta', [$this, 'functionMeta']);
+        $smarty->registerPlugin('function', 'js', [$this, 'functionJs']);
         $smarty->registerPlugin('function', 'registerJsFile', [$this, 'functionRegisterJsFile']);
         $smarty->registerPlugin('function', 'registerCssFile', [$this, 'functionRegisterCssFile']);
         $smarty->registerPlugin('block', 'title', [$this, 'blockTitle']);
@@ -250,6 +252,32 @@ PHP;
         $key = isset($params['name']) ? $params['name'] : null;
 
         Yii::$app->getView()->registerMetaTag($params, $key);
+    }
+
+    /**
+     * Smarty template function to instantiate JsExpression
+     *
+     * Usage is the following:
+     *
+     * {js assign='expr' expression='function(){alert('expression');}}'}
+     *
+     * @param array $params
+     * @param \Smarty_Internal_Template $template
+     *
+     * @return string
+     * @since 2.0.9
+     */
+    public function functionJs($params, \Smarty_Internal_Template $template)
+    {
+        if (!isset($params['expression'])) {
+            trigger_error("expression: missing 'js' parameter");
+        }
+
+        if (!isset($params['assign'])) {
+            trigger_error("assign: missing 'js' parameter");
+        }
+
+        $template->assign($params['assign'], new JsExpression($params['expression']));
     }
 
     /**
