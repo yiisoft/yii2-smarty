@@ -15,7 +15,7 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-smarty/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-smarty)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-smarty/downloads.png)](https://packagist.org/packages/yiisoft/yii2-smarty)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-smarty.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-smarty)
+[![Build Status](https://travis-ci.com/yiisoft/yii2-smarty.svg?branch=master)](https://travis-ci.com/yiisoft/yii2-smarty)
 
 
 Installation
