@@ -22,16 +22,6 @@ jobs:
               uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php }}
-            - name: Get composer cache directory
-              id: composer-cache
-              run: echo "::set-env name=COMPOSER_CACHE_DIR::$(composer config cache-dir)"
-            - name: Cache composer dependencies
-              uses: actions/cache@v1
-              with:
-                  path: ${{ env.COMPOSER_CACHE_DIR }}
-                  key: php${{ matrix.php }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.json') }}
-                  restore-keys: |
-                      php${{ matrix.php }}-composer-${{ matrix.dependencies }}-
             - name: Install dependencies
               run: composer update $DEFAULT_COMPOSER_FLAGS
             - name: Run unit tests with coverage
