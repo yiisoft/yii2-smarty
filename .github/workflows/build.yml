@@ -29,8 +29,8 @@ jobs:
               uses: actions/cache@v1
               with:
                   path: ${{ steps.composer-cache.outputs.dir }}
-                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-                  restore-keys: ${{ runner.os }}-composer-
+                  key: ${{ runner.os }}-composer--${{ hashFiles('**/composer.lock') }}
+                  restore-keys: ${{ runner.os }}-composer--
             - name: Install dependencies
               run: composer update $DEFAULT_COMPOSER_FLAGS
             - name: Run unit tests with coverage
