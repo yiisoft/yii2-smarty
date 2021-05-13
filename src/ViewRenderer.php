@@ -79,7 +79,7 @@ class ViewRenderer extends BaseViewRenderer
             $this->smarty->$key = $value;
         }
 
-        $this->smarty->setTemplateDir([
+        $this->smarty->addTemplateDir([
             dirname(Yii::$app->getView()->getViewFile()),
             Yii::$app->getViewPath(),
         ]);
