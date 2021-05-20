@@ -1,15 +1,10 @@
 Yii Framework 2 smarty extension Change Log
 ===========================================
 
-2.0.11 
-----------------------------------------
-- Bug #38: Change call of Smarty method setTemplateDir to addTemplateDir (alex-net)
-
-
 2.0.10 under development
 ------------------------
 
-- no changes in this release.
+- Bug #38: Change call of Smarty method `setTemplateDir()` to `addTemplateDir()` (alex-net)
 
 
 2.0.9 November 19, 2019
