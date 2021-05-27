@@ -456,11 +456,7 @@ PHP;
      */
     protected function getViewConstVal($string, $default)
     {
-        try {
-            $val = @constant('yii\web\View::' . $string);
-        } catch (\Exception $e) {
-        } finally {
-            return isset($val) ? $val : $default;
-        }
+        $r = new \ReflectionClass('\yii\web\View');
+        return (false !== ($val = $r->getConstant($string))) ? $val : $default;
     }
 }
