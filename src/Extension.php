@@ -458,8 +458,9 @@ PHP;
     {
         try {
             $val = @constant('yii\web\View::' . $string);
-        } finally {
-            return isset($val) ? $val : $default;
+        } catch (\Exception $e) {
         }
+
+        return isset($val) ? $val : $default;
     }
 }
