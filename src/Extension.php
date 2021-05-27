@@ -456,8 +456,10 @@ PHP;
      */
     protected function getViewConstVal($string, $default)
     {
-        $val = @constant('yii\web\View::' . $string);
-
-        return isset($val) ? $val : $default;
+        try {
+            $val = @constant('yii\web\View::' . $string);
+        } finally {
+            return isset($val) ? $val : $default;
+        }
     }
 }
