@@ -77,7 +77,7 @@ class Extension
             trigger_error("path: missing 'route' parameter");
         }
 
-        array_unshift($params, $params['route']) ;
+        array_unshift($params, $params['route']);
         unset($params['route']);
 
         return Url::to($params);
@@ -103,7 +103,7 @@ class Extension
             trigger_error("path: missing 'route' parameter");
         }
 
-        array_unshift($params, $params['route']) ;
+        array_unshift($params, $params['route']);
         unset($params['route']);
 
         return Url::to($params, true);
@@ -186,6 +186,8 @@ PHP;
 ?>
 PHP;
         }
+
+        return '';
     }
 
     /**
@@ -212,7 +214,6 @@ PHP;
      *
      * @param $params
      * @param \Smarty_Internal_Template $template
-     * @return string
      * @note Even though this method is public it should not be called directly.
      */
     public function functionSet($params, $template)
@@ -244,7 +245,6 @@ PHP;
      *
      * @param $params
      * @param \Smarty_Internal_Template $template
-     * @return string
      * @note Even though this method is public it should not be called directly.
      */
     public function functionMeta($params, $template)
@@ -264,7 +264,6 @@ PHP;
      * @param array $params
      * @param \Smarty_Internal_Template $template
      *
-     * @return string
      * @since 2.0.9
      */
     public function functionJs($params, \Smarty_Internal_Template $template)
@@ -292,7 +291,6 @@ PHP;
      * @param $content
      * @param \Smarty_Internal_Template $template
      * @param $repeat
-     * @return string
      * @note Even though this method is public it should not be called directly.
      */
     public function blockTitle($params, $content, $template, &$repeat)
@@ -317,7 +315,6 @@ PHP;
      * @param $content
      * @param \Smarty_Internal_Template $template
      * @param $repeat
-     * @return string
      * @note Even though this method is public it should not be called directly.
      */
     public function blockDescription($params, $content, $template, &$repeat)
@@ -326,9 +323,10 @@ PHP;
             // Clean-up whitespace and newlines
             $content = preg_replace('/\s+/', ' ', trim($content));
 
-            Yii::$app->getView()->registerMetaTag(['name' => 'description',
-                                                   'content' => $content],
-                                                   'description');
+            Yii::$app->getView()->registerMetaTag([
+                'name' => 'description',
+                'content' => $content
+            ], 'description');
         }
     }
 
@@ -345,7 +343,6 @@ PHP;
      *
      * @param $params
      * @param \Smarty_Internal_Template $template
-     * @return string
      * @note Even though this method is public it should not be called directly.
      */
     public function functionRegisterJsFile($params, $template)
@@ -379,7 +376,6 @@ PHP;
      * @param $content
      * @param \Smarty_Internal_Template $template
      * @param $repeat
-     * @return string
      * @note Even though this method is public it should not be called directly.
      */
     public function blockJavaScript($params, $content, $template, &$repeat)
@@ -388,9 +384,11 @@ PHP;
             $key = isset($params['key']) ? $params['key'] : null;
             $position = isset($params['position']) ? $params['position'] : null;
 
-            Yii::$app->getView()->registerJs($content,
-                                             $this->getViewConstVal($position, View::POS_READY),
-                                             $key);
+            Yii::$app->getView()->registerJs(
+                $content,
+                $this->getViewConstVal($position, View::POS_READY),
+                $key
+            );
         }
     }
 
@@ -405,7 +403,6 @@ PHP;
      *
      * @param $params
      * @param \Smarty_Internal_Template $template
-     * @return string
      * @note Even though this method is public it should not be called directly.
      */
     public function functionRegisterCssFile($params, $template)
@@ -438,7 +435,6 @@ PHP;
      * @param $content
      * @param \Smarty_Internal_Template $template
      * @param $repeat
-     * @return string
      * @note Even though this method is public it should not be called directly.
      */
     public function blockCss($params, $content, $template, &$repeat)
@@ -458,9 +454,10 @@ PHP;
      * @param int $default Default value
      * @return mixed
      */
-   protected function getViewConstVal($string, $default)
-   {
-      $val = @constant('yii\web\View::' . $string);
-      return isset($val) ? $val : $default;
-   }
+    protected function getViewConstVal($string, $default)
+    {
+        $val = @constant('yii\web\View::' . $string);
+
+        return isset($val) ? $val : $default;
+    }
 }
