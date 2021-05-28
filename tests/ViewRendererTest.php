@@ -9,6 +9,7 @@ namespace yiiunit\smarty;
 
 use yii\helpers\FileHelper;
 use yii\web\AssetManager;
+use yii\web\Controller;
 use yii\web\View;
 use Yii;
 use yiiunit\smarty\data\Singer;
@@ -154,6 +155,25 @@ class ViewRendererTest extends TestCase
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/widget-invalid.tpl');
         $this->assertNotContains('<div class="widget">test</div>', $content);
+    }
+
+    public function testRegisterBlocks()
+    {
+        $view = Yii::$app->view;
+        $view->renderers['tpl'] = [
+            'class' => '\yii\smarty\ViewRenderer',
+            'options' => ['force_compile' => true]
+        ];
+        $content = $view->render('@yiiunit/smarty/views/register-blocks.tpl');
+        $content = $view->renderFile('@yiiunit/smarty/views/layout-block.tpl', ['content' => $content]);
+        $this->assertContains('<script>jQuery(function ($) {
+    console.log(\'test\');
+
+});</script>', $content);
+        $this->assertContains('<style>    body {
+        background-color: white;
+    }
+</style>', $content);
     }
 
     /**
