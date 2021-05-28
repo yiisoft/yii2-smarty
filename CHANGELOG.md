@@ -4,7 +4,7 @@ Yii Framework 2 smarty extension Change Log
 2.0.10 under development
 ------------------------
 
-Bug #39: Fixed fetching View constant values for `registerJs` and `registerCss` blocks in PHP 8 (simialbi)
+- Bug #39: Fixed fetching View constant values for `registerJs` and `registerCss` blocks in PHP 8 (simialbi)
 - Bug #38: Change call of Smarty method `setTemplateDir()` to `addTemplateDir()` (alex-net)
 
 
