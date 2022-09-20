@@ -138,6 +138,9 @@ class ViewRendererTest extends TestCase
 
     public function testSmartyClass()
     {
+        if (version_compare(\Smarty::SMARTY_VERSION, '4.0.0', '>=')) {
+            $this->markTestSkipped();
+        }
         $view = $this->mockSmartyBCView();
         $content = $view->renderFile('@yiiunit/smarty/views/bc.tpl');
         $this->assertTrue(strpos($content, date('Ymd')) !== false, 'A date should be there: ' . $content);
