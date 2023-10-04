@@ -17,14 +17,14 @@ use yii\web\View;
 class ExtensionTest extends TestCase
 {
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockWebApplication();
         FileHelper::createDirectory(Yii::getAlias('@runtime/Smarty'));
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         FileHelper::removeDirectory(Yii::getAlias('@runtime/Smarty'));
