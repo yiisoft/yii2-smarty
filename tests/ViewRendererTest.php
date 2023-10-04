@@ -19,13 +19,13 @@ use yiiunit\smarty\data\Singer;
  */
 class ViewRendererTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockWebApplication();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         FileHelper::removeDirectory(Yii::getAlias('@runtime/assets'));
@@ -105,8 +105,8 @@ class ViewRendererTest extends TestCase
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/use.tpl');
-        $this->assertContains('<form id="', $content);
-        $this->assertContains('<ul class="', $content);
+        $this->assertStringContainsString('<form id="', $content);
+        $this->assertStringContainsString('<ul class="', $content);
     }
 
     /**
@@ -117,8 +117,8 @@ class ViewRendererTest extends TestCase
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/use.tpl');
         $view->renderFile('@yiiunit/smarty/views/extended-layout.tpl', ['content' => $content]);
-        $this->assertContains('<form id="', $content);
-        $this->assertContains('<ul class="', $content);
+        $this->assertStringContainsString('<form id="', $content);
+        $this->assertStringContainsString('<ul class="', $content);
     }
 
     /**
@@ -150,14 +150,14 @@ class ViewRendererTest extends TestCase
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/widget-default.tpl');
-        $this->assertContains('<div class="widget">test</div>', $content);
+        $this->assertStringContainsString('<div class="widget">test</div>', $content);
     }
 
     public function testWidgetHidden()
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/widget-invalid.tpl');
-        $this->assertNotContains('<div class="widget">test</div>', $content);
+        $this->assertStringNotContainsString('<div class="widget">test</div>', $content);
     }
 
     public function testRegisterBlocks()
@@ -169,11 +169,11 @@ class ViewRendererTest extends TestCase
         ];
         $content = $view->render('@yiiunit/smarty/views/register-blocks.tpl');
         $content = $view->renderFile('@yiiunit/smarty/views/layout-block.tpl', ['content' => $content]);
-        $this->assertContains('<script>jQuery(function ($) {
+        $this->assertStringContainsString('<script>jQuery(function ($) {
     console.log(\'test\');
 
 });</script>', $content);
-        $this->assertContains('<style>    body {
+        $this->assertStringContainsString('<style>    body {
         background-color: white;
     }
 </style>', $content);
