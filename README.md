@@ -16,7 +16,12 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-smarty/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-smarty)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-smarty/downloads.png)](https://packagist.org/packages/yiisoft/yii2-smarty)
 [![Build Status](https://github.com/yiisoft/yii2-smarty/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-smarty/actions)
+[![codecov](https://codecov.io/gh/yiisoft/yii2-smarty/graph/badge.svg?token=6dBHWO0kMO)](https://codecov.io/gh/yiisoft/yii2-smarty)
 
+Requirements
+------------
+
+- PHP 7.3 or higher.
 
 Installation
 ------------
