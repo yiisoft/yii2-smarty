@@ -2,7 +2,7 @@ Template Syntax
 ===============
 
 The best resource to learn Smarty template syntax is its official documentation you can find at
-[www.smarty.net](http://www.smarty.net/docs/en/). Additionally there are Yii-specific syntax extensions
+[www.smarty.net](https://www.smarty.net/docs/en/). Additionally there are Yii-specific syntax extensions
 described below.
 
 ## Setting object properties
@@ -121,7 +121,7 @@ In the second case we're using path aliases. All the Yii aliases such as `@app` 
 In order to register JavaScript and CSS files the following syntax could be used:
 
 ```
-{registerJsFile url='http://maps.google.com/maps/api/js?sensor=false' position='POS_END'}
+{registerJsFile url='https://maps.google.com/maps/api/js?sensor=false' position='POS_END'}
 {registerCssFile url='@assets/css/normalizer.css'}
 ```
 
