@@ -2,7 +2,7 @@
 =======================
 
 Лучшим ресурсом для изучения основ шаблонизатора Smarty является официальная документация, которую можно найти тут - 
-[www.smarty.net](http://www.smarty.net/docs/en/). Ниже описаны синтаксические расширения, специфичные для Yii:
+[www.smarty.net](https://www.smarty.net/docs/en/). Ниже описаны синтаксические расширения, специфичные для Yii:
 
 ## Установка свойств объекта
 
@@ -116,7 +116,7 @@
 Для регистрации внешних файлов JavaScript и CSS используйте следующий синтаксис:
 
 ```smarty
-{registerJsFile url='http://maps.google.com/maps/api/js?sensor=false' position='POS_END'}
+{registerJsFile url='https://maps.google.com/maps/api/js?sensor=false' position='POS_END'}
 {registerCssFile url='@assets/css/normalizer.css'}
 ```
 

@@ -1,7 +1,7 @@
 テンプレート構文
 ================
 
-Smarty のテンプレートの構文を学ぶための最善のリソースは、[www.smarty.net](http://www.smarty.net/docs/ja/)
+Smarty のテンプレートの構文を学ぶための最善のリソースは、[www.smarty.net](https://www.smarty.net/docs/ja/)
 にある公式ドキュメントです。
 それに追加して、下記に説明する Yii 固有の拡張構文があります。
 
@@ -121,7 +121,7 @@ ActiveForm のように `begin` および `end` メソッドを持つウィジ�
 JavaScript と CSS のファイルを登録するためには、次の構文を使うことが出来ます。
 
 ```
-{registerJsFile url='http://maps.google.com/maps/api/js?sensor=false' position='POS_END'}
+{registerJsFile url='https://maps.google.com/maps/api/js?sensor=false' position='POS_END'}
 {registerCssFile url='@assets/css/normalizer.css'}
 ```
 
