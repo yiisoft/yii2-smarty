@@ -46,7 +46,7 @@ class ViewRenderer extends BaseViewRenderer
     public $widgets = ['functions' => [], 'blocks' => []];
     /**
      * @var array additional Smarty options
-     * @see http://www.smarty.net/docs/en/api.variables.tpl
+     * @see https://www.smarty.net/docs/en/api.variables.tpl
      */
     public $options = [];
     /**
@@ -218,7 +218,7 @@ class ViewRenderer extends BaseViewRenderer
             } else {
                 $out = '';
             }
-            
+
             return ob_get_clean() . $out;
         }
     }

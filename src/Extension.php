@@ -334,7 +334,7 @@ PHP;
      * Smarty function plugin
      * Usage is the following:
      *
-     * {registerJsFile url='http://maps.google.com/maps/api/js?sensor=false' position='POS_END'}
+     * {registerJsFile url='https://maps.google.com/maps/api/js?sensor=false' position='POS_END'}
      *
      * Supported attributes: url, key, depends, position and valid HTML attributes for the script tag.
      * Refer to Yii documentation for details.
