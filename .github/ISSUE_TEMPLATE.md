@@ -11,10 +11,10 @@ Yii communities listed at https://github.com/yiisoft/yii2/wiki/communities
 
 ### Additional info
 
-| Q                  | A |
-|--------------------|---|
-| Yii version        |   |
-| Yii Smarty version |   |
-| Smarty version     |   |
-| PHP version        |   |
-| Operating system   |   |
+| Q                   | A
+|---------------------|---
+| Yii version         | 2.0.?
+| Yii Smarty version  |
+| Smarty version      |
+| PHP version         |
+| Operating system    |
