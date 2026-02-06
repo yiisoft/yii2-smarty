@@ -1,11 +1,11 @@
 <?php
+
 /**
  * @package yii2-smarty
  * @author Simon Karlen <simi.albi@gmail.com>
  */
 
 namespace yiiunit\smarty\widgets;
-
 
 use yii\base\Widget;
 

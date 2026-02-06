@@ -1,10 +1,12 @@
 Yii Framework 2 smarty extension Change Log
 ===========================================
 
-2.0.12 under development
+3.0.0 under development
 ------------------------
 
-- no changes in this release.
+- Enh #: Applying Yii2 coding standards (@s1lver)
+- Enh #: Raise min version to PHP 7.4 (@s1lver)
+- Enh #: Raise min Smarty version to 4.2.0 (@s1lver)
 
 
 2.0.11 November 18, 2022

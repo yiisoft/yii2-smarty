@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -16,27 +17,26 @@ use yii\web\View;
  */
 class ExtensionTest extends TestCase
 {
-
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockWebApplication();
         FileHelper::createDirectory(Yii::getAlias('@runtime/Smarty'));
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         FileHelper::removeDirectory(Yii::getAlias('@runtime/Smarty'));
     }
 
-    public function testFunctions()
+    public function testFunctions(): void
     {
         $functions = [
             'path' => 'functionPath',
             'url' => 'functionUrl',
             'set' => 'functionSet',
-            'meta'=> 'functionMeta',
+            'meta' => 'functionMeta',
             'js' => 'functionJs',
             'registerJsFile' => 'functionRegisterJsFile',
             'registerCssFile' => 'functionRegisterCssFile'
@@ -53,8 +53,8 @@ class ExtensionTest extends TestCase
     }
 }
 
-class TestViewRenderer extends \yii\smarty\ViewRenderer {
-
+class TestViewRenderer extends \yii\smarty\ViewRenderer
+{
     /**
      * @return \Smarty
      */

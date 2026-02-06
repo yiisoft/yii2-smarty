@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -9,7 +10,6 @@ namespace yiiunit\smarty;
 
 use yii\helpers\FileHelper;
 use yii\web\AssetManager;
-use yii\web\Controller;
 use yii\web\View;
 use Yii;
 use yiiunit\smarty\data\Singer;
@@ -19,13 +19,13 @@ use yiiunit\smarty\data\Singer;
  */
 class ViewRendererTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockWebApplication();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         FileHelper::removeDirectory(Yii::getAlias('@runtime/assets'));
@@ -35,7 +35,7 @@ class ViewRendererTest extends TestCase
     /**
      * https://github.com/yiisoft/yii2/issues/2265
      */
-    public function testNoParams()
+    public function testNoParams(): void
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/simple.tpl');
@@ -43,7 +43,7 @@ class ViewRendererTest extends TestCase
         $this->assertEquals('simple view without parameters.', $content);
     }
 
-    public function testRender()
+    public function testRender(): void
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/view.tpl', ['param' => 'Hello World!']);
@@ -51,80 +51,93 @@ class ViewRendererTest extends TestCase
         $this->assertEquals('test view Hello World!.', $content);
     }
 
-    public function testLayoutAssets()
+    public function testLayoutAssets(): void
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/layout.tpl');
 
-        $this->assertEquals(1,
+        $this->assertEquals(
+            1,
             preg_match('#<script src="/assets/[0-9a-z]+/jquery\\.js"></script>\s*</body>#', $content),
-            'Content does not contain the jquery js:' . $content);
+            'Content does not contain the jquery js:' . $content
+        );
     }
 
-
-    public function testChangeTitle()
+    public function testChangeTitle(): void
     {
         $view = $this->mockView();
         $view->title = 'Original title';
 
         $content = $view->renderFile('@yiiunit/smarty/views/changeTitle.tpl');
         $this->assertTrue(strpos($content, 'New title') !== false, 'New title should be there:' . $content);
-        $this->assertFalse(strpos($content, 'Original title') !== false,
-            'Original title should not be there:' . $content);
+        $this->assertFalse(
+            strpos($content, 'Original title') !== false,
+            'Original title should not be there:' . $content
+        );
     }
 
-    public function testForm()
+    public function testForm(): void
     {
         $view = $this->mockView();
         $model = new Singer();
         $content = $view->renderFile('@yiiunit/smarty/views/form.tpl', ['model' => $model]);
-        $this->assertEquals(1,
-            preg_match('#<form id="login-form" class="form-horizontal" action="/form-handler" method="post">.*?</form>#s',
-                $content), 'Content does not contain form:' . $content);
+        $this->assertEquals(
+            1,
+            preg_match('#<form id="login-form" class="form-horizontal" action="/form-handler" method="post">.*?</form>#s', $content),
+            'Content does not contain form:' . $content
+        );
     }
 
-    public function testInheritance()
+    public function testInheritance(): void
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/extends2.tpl');
-        $this->assertTrue(strpos($content, 'Hello, I\'m inheritance test!') !== false,
-            'Hello, I\'m inheritance test! should be there:' . $content);
+        $this->assertTrue(
+            strpos($content, 'Hello, I\'m inheritance test!') !== false,
+            'Hello, I\'m inheritance test! should be there:' . $content
+        );
         $this->assertTrue(strpos($content, 'extends2 block') !== false, 'extends2 block should be there:' . $content);
-        $this->assertFalse(strpos($content, 'extends1 block') !== false,
-            'extends1 block should not be there:' . $content);
+        $this->assertFalse(
+            strpos($content, 'extends1 block') !== false,
+            'extends1 block should not be there:' . $content
+        );
 
         $content = $view->renderFile('@yiiunit/smarty/views/extends3.tpl');
-        $this->assertTrue(strpos($content, 'Hello, I\'m inheritance test!') !== false,
-            'Hello, I\'m inheritance test! should be there:' . $content);
+        $this->assertTrue(
+            strpos($content, 'Hello, I\'m inheritance test!') !== false,
+            'Hello, I\'m inheritance test! should be there:' . $content
+        );
         $this->assertTrue(strpos($content, 'extends3 block') !== false, 'extends3 block should be there:' . $content);
-        $this->assertFalse(strpos($content, 'extends1 block') !== false,
-            'extends1 block should not be there:' . $content);
+        $this->assertFalse(
+            strpos($content, 'extends1 block') !== false,
+            'extends1 block should not be there:' . $content
+        );
     }
 
-    public function testUse()
+    public function testUse(): void
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/use.tpl');
-        $this->assertContains('<form id="', $content);
-        $this->assertContains('<ul class="', $content);
+        $this->assertStringContainsString('<form id="', $content);
+        $this->assertStringContainsString('<ul class="', $content);
     }
 
     /**
      * @depends testUse
      */
-    public function testInheritedUse()
+    public function testInheritedUse(): void
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/use.tpl');
         $view->renderFile('@yiiunit/smarty/views/extended-layout.tpl', ['content' => $content]);
-        $this->assertContains('<form id="', $content);
-        $this->assertContains('<ul class="', $content);
+        $this->assertStringContainsString('<form id="', $content);
+        $this->assertStringContainsString('<ul class="', $content);
     }
 
     /**
      * @see https://github.com/yiisoft/yii2-smarty/issues/23
      */
-    public function testIssue23()
+    public function testIssue23(): void
     {
         $view = $this->mockViewCompileOnce();
         $view->renderFile('@yiiunit/smarty/views/issue23_t1.tpl');
@@ -136,7 +149,7 @@ class ViewRendererTest extends TestCase
         $this->assertTrue(true, 'no error');
     }
 
-    public function testSmartyClass()
+    public function testSmartyClass(): void
     {
         if (version_compare(\Smarty::SMARTY_VERSION, '4.0.0', '>=')) {
             $this->markTestSkipped();
@@ -146,21 +159,21 @@ class ViewRendererTest extends TestCase
         $this->assertTrue(strpos($content, date('Ymd')) !== false, 'A date should be there: ' . $content);
     }
 
-    public function testWidgetDefault()
+    public function testWidgetDefault(): void
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/widget-default.tpl');
-        $this->assertContains('<div class="widget">test</div>', $content);
+        $this->assertStringContainsString('<div class="widget">test</div>', $content);
     }
 
-    public function testWidgetHidden()
+    public function testWidgetHidden(): void
     {
         $view = $this->mockView();
         $content = $view->renderFile('@yiiunit/smarty/views/widget-invalid.tpl');
-        $this->assertNotContains('<div class="widget">test</div>', $content);
+        $this->assertStringNotContainsString('<div class="widget">test</div>', $content);
     }
 
-    public function testRegisterBlocks()
+    public function testRegisterBlocks(): void
     {
         $view = Yii::$app->view;
         $view->renderers['tpl'] = [
@@ -169,11 +182,11 @@ class ViewRendererTest extends TestCase
         ];
         $content = $view->render('@yiiunit/smarty/views/register-blocks.tpl');
         $content = $view->renderFile('@yiiunit/smarty/views/layout-block.tpl', ['content' => $content]);
-        $this->assertContains('<script>jQuery(function ($) {
+        $this->assertStringContainsString('<script>jQuery(function ($) {
     console.log(\'test\');
 
 });</script>', $content);
-        $this->assertContains('<style>    body {
+        $this->assertStringContainsString('<style>    body {
         background-color: white;
     }
 </style>', $content);

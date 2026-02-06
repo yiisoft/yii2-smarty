@@ -1,0 +1,505 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Access to an undefined property yii\\base\\View\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 2
+			path: src/Extension.php
+
+		-
+			message: '#^Call to an undefined method yii\\base\\View\:\:registerCss\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Call to an undefined method yii\\base\\View\:\:registerCssFile\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Call to an undefined method yii\\base\\View\:\:registerJs\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Call to an undefined method yii\\base\\View\:\:registerJsFile\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Call to an undefined method yii\\base\\View\:\:registerMetaTag\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: src/Extension.php
+
+		-
+			message: '#^Cannot access property \$layout on yii\\console\\Controller\<yii\\base\\Module\>\|yii\\web\\Controller\<yii\\base\\Module\>\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Dead catch \- Exception is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockCss\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockCss\(\) has parameter \$content with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockCss\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockCss\(\) has parameter \$repeat with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockDescription\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockDescription\(\) has parameter \$content with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockDescription\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockDescription\(\) has parameter \$repeat with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockJavaScript\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockJavaScript\(\) has parameter \$content with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockJavaScript\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockJavaScript\(\) has parameter \$repeat with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockTitle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockTitle\(\) has parameter \$content with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockTitle\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:blockTitle\(\) has parameter \$repeat with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:compilerUse\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionJs\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionJs\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionMeta\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionMeta\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionPath\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionRegisterCssFile\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionRegisterCssFile\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionRegisterJsFile\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionRegisterJsFile\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionSet\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionSet\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:functionUrl\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Method yii\\smarty\\Extension\:\:modifierVoid\(\) should return string but empty return statement found\.$#'
+			identifier: return.empty
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Parameter \#3 \$callback of method Smarty_Internal_TemplateBase\:\:registerPlugin\(\) expects callable\(\)\: mixed, array\{yii\\smarty\\ViewRenderer, non\-falsy\-string\} given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/Extension.php
+
+		-
+			message: '#^Access to an undefined property object\:\:\$default_template_handler_func\.$#'
+			identifier: property.notFound
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Call to an undefined method object\:\:addPluginsDir\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Call to an undefined method object\:\:addTemplateDir\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Call to an undefined method object\:\:registerClass\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Call to an undefined method object\:\:registerPlugin\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Call to an undefined method object\:\:setCacheDir\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Call to an undefined method object\:\:setCompileDir\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Cannot call method afterRun\(\) on yii\\base\\Widget\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Cannot call method beforeRun\(\) on yii\\base\\Widget\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Cannot call method run\(\) on yii\\base\\Widget\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:__call\(\) has parameter \$args with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:render\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:widgetBlock\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:widgetBlock\(\) has parameter \$class with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:widgetBlock\(\) has parameter \$content with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:widgetBlock\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:widgetBlock\(\) has parameter \$repeat with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:widgetFunction\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:widgetFunction\(\) has parameter \$class with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yii\\smarty\\ViewRenderer\:\:widgetFunction\(\) has parameter \$params with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Parameter \#1 \$flag of function ob_implicit_flush expects int, false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Parameter \#1 \$path of function dirname expects string, bool\|string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Parameter \#4 \$parent of method Smarty\:\:createTemplate\(\) expects object\|null, array\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Property yii\\smarty\\ViewRenderer\:\:\$imports \(array\) in isset\(\) is not nullable\.$#'
+			identifier: isset.property
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Property yii\\smarty\\ViewRenderer\:\:\$imports type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Property yii\\smarty\\ViewRenderer\:\:\$options type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Property yii\\smarty\\ViewRenderer\:\:\$pluginDirs type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Property yii\\smarty\\ViewRenderer\:\:\$smarty \(Smarty\) does not accept object\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Property yii\\smarty\\ViewRenderer\:\:\$widgets type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Unable to resolve the template type T in call to static method yii\\BaseYii\<yii\\web\\IdentityInterface\>\:\:createObject\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Method yiiunit\\smarty\\TestCase\:\:destroyApplication\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method yiiunit\\smarty\\TestCase\:\:mockWebApplication\(\) has parameter \$config with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method yiiunit\\smarty\\TestCase\:\:mockWebApplication\(\) return type with generic class yii\\web\\Application does not specify its types\: TUserIdentity$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method yiiunit\\smarty\\TestCase\:\:mockWebApplication\(\) should return yii\\web\\Application but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Static property yii\\BaseYii\<yii\\web\\IdentityInterface\>\:\:\$app \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept null\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true and ''no error'' will always evaluate to true\.$#'
+			identifier: method.alreadyNarrowedType
+			count: 1
+			path: tests/ViewRendererTest.php
+
+		-
+			message: '#^If condition is always true\.$#'
+			identifier: if.alwaysTrue
+			count: 1
+			path: tests/ViewRendererTest.php
+
+		-
+			message: '#^Method yiiunit\\smarty\\ViewRendererTest\:\:mockAssetManager\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/ViewRendererTest.php
+
+		-
+			message: '#^Method yiiunit\\smarty\\ViewRendererTest\:\:mockSmartyBCView\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/ViewRendererTest.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: tests/ViewRendererTest.php
+
+		-
+			message: '#^Property yiiunit\\smarty\\data\\Singer\:\:\$firstName has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/Singer.php
+
+		-
+			message: '#^Property yiiunit\\smarty\\data\\Singer\:\:\$lastName has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/Singer.php
+
+		-
+			message: '#^Property yiiunit\\smarty\\data\\Singer\:\:\$test has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/Singer.php
+
+		-
+			message: '#^Method yiiunit\\smarty\\widgets\\DemoWidget\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/widgets/DemoWidget.php

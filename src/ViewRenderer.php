@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -91,20 +92,20 @@ class ViewRenderer extends BaseViewRenderer
         $this->smarty->addPluginsDir($this->pluginDirs);
 
         if (isset($this->imports)) {
-            foreach(($this->imports) as $tag => $class) {
+            foreach (($this->imports) as $tag => $class) {
                 $this->smarty->registerClass($tag, $class);
             }
         }
         // Register block widgets specified in configuration array
         if (isset($this->widgets['blocks'])) {
-            foreach(($this->widgets['blocks']) as $tag => $class) {
+            foreach (($this->widgets['blocks']) as $tag => $class) {
                 $this->smarty->registerPlugin('block', $tag, [$this, '_widget_block__' . $tag]);
                 $this->smarty->registerClass($tag, $class);
             }
         }
         // Register function widgets specified in configuration array
         if (isset($this->widgets['functions'])) {
-            foreach(($this->widgets['functions']) as $tag => $class) {
+            foreach (($this->widgets['functions']) as $tag => $class) {
                 $this->smarty->registerPlugin('function', $tag, [$this, '_widget_function__' . $tag]);
                 $this->smarty->registerClass($tag, $class);
             }
