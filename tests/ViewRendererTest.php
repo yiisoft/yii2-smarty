@@ -186,7 +186,7 @@ class ViewRendererTest extends TestCase
     console.log(\'test\');
 
 });</script>', $content);
-        $this->assertStringContainsString('<style>    body {
+        $this->assertContainsWithoutLE('<style>    body {
         background-color: white;
     }
 </style>', $content);
