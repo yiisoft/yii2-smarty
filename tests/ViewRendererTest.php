@@ -182,7 +182,7 @@ class ViewRendererTest extends TestCase
         ];
         $content = $view->render('@yiiunit/smarty/views/register-blocks.tpl');
         $content = $view->renderFile('@yiiunit/smarty/views/layout-block.tpl', ['content' => $content]);
-        $this->assertStringContainsString('<script>jQuery(function ($) {
+        $this->assertContainsWithoutLE('<script>jQuery(function ($) {
     console.log(\'test\');
 
 });</script>', $content);

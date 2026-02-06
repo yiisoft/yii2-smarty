@@ -61,4 +61,15 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         Yii::$app = null;
         Yii::$container = new Container();
     }
+
+    /**
+     * Asserting two strings equality ignoring line endings
+     */
+    public function assertContainsWithoutLE(string $needle, string $haystack): void
+    {
+        $needle = str_replace("\r\n", "\n", $needle);
+        $haystack = str_replace("\r\n", "\n", $haystack);
+
+        $this->assertStringContainsString($needle, $haystack);
+    }
 }
