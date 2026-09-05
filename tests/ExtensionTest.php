@@ -53,6 +53,9 @@ class ExtensionTest extends TestCase
     }
 }
 
+/**
+ * @property-read \Smarty $smartyInstance
+ */
 class TestViewRenderer extends \yii\smarty\ViewRenderer
 {
     /**
