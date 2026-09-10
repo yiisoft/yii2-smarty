@@ -37,9 +37,21 @@ parameters:
 			path: src/Extension.php
 
 		-
-			message: '#^Cannot access property \$layout on yii\\console\\Controller\<yii\\base\\Module\>\|yii\\web\\Controller\<yii\\base\\Module\>\|null\.$#'
+			message: '#^Cannot access property \$controller on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
 			identifier: property.nonObject
 			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Cannot access property \$layout on yii\\console\\Controller\|yii\\web\\Controller\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: '#^Cannot call method getView\(\) on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: method.nonObject
+			count: 9
 			path: src/Extension.php
 
 		-
@@ -277,6 +289,18 @@ parameters:
 			path: src/ViewRenderer.php
 
 		-
+			message: '#^Cannot access property \$controller on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Cannot access property \$params on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/ViewRenderer.php
+
+		-
 			message: '#^Cannot call method afterRun\(\) on yii\\base\\Widget\|null\.$#'
 			identifier: method.nonObject
 			count: 1
@@ -286,6 +310,18 @@ parameters:
 			message: '#^Cannot call method beforeRun\(\) on yii\\base\\Widget\|null\.$#'
 			identifier: method.nonObject
 			count: 1
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Cannot call method getView\(\) on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: src/ViewRenderer.php
+
+		-
+			message: '#^Cannot call method getViewPath\(\) on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: method.nonObject
+			count: 2
 			path: src/ViewRenderer.php
 
 		-
@@ -433,26 +469,20 @@ parameters:
 			path: tests/TestCase.php
 
 		-
-			message: '#^Method yiiunit\\smarty\\TestCase\:\:mockWebApplication\(\) return type with generic class yii\\web\\Application does not specify its types\: TUserIdentity$#'
-			identifier: missingType.generics
-			count: 1
-			path: tests/TestCase.php
-
-		-
 			message: '#^Method yiiunit\\smarty\\TestCase\:\:mockWebApplication\(\) should return yii\\web\\Application but return statement is missing\.$#'
 			identifier: return.missing
 			count: 1
 			path: tests/TestCase.php
 
 		-
-			message: '#^Static property yii\\BaseYii\<yii\\web\\IdentityInterface\>\:\:\$app \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept null\.$#'
-			identifier: assign.propertyType
-			count: 1
-			path: tests/TestCase.php
-
-		-
 			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true and ''no error'' will always evaluate to true\.$#'
 			identifier: method.alreadyNarrowedType
+			count: 1
+			path: tests/ViewRendererTest.php
+
+		-
+			message: '#^Cannot access property \$view on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
 			count: 1
 			path: tests/ViewRendererTest.php
 
