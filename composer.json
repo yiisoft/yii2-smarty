@@ -24,7 +24,7 @@
     "require": {
         "php": ">=7.4",
         "yiisoft/yii2": "^2.0.54",
-        "smarty/smarty": "^4.2.0"
+        "smarty/smarty": "^5.8.4"
     },
     "require-dev": {
         "yiisoft/yii2-coding-standards": "~3.0",
