@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * @link https://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license https://www.yiiframework.com/license/
+ */
+
+/**
  * @package yii2-smarty
  * @author Simon Karlen <simi.albi@gmail.com>
  */
@@ -12,7 +18,7 @@ use yii\base\Widget;
 class DemoWidget extends Widget
 {
     /**
-     * @var boolean Prevent
+     * @var bool Prevent
      */
     public $hidden = false;
 
