@@ -10,7 +10,6 @@ namespace yiiunit\smarty;
 
 use Yii;
 use yii\helpers\FileHelper;
-use yii\web\View;
 
 /**
  * @group smarty
